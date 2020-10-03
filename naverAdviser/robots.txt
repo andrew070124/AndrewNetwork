@@ -1,3 +1,0 @@
-User-agent: *
-Allow:/
-Sitemap: https://annt.ga/naverAdviser/sitemap.xml
