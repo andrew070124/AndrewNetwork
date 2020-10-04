@@ -84,16 +84,7 @@
 
 			}
 		// 서버 주소 복사
-			document.querySelector(".copy").addEventListener("click", function(){
-				var tempElem = document.createElement('textarea');
-				tempElem.value = 'ANNT.ml';  
-				document.body.appendChild(tempElem);
-			
-				tempElem.select();
-				document.execCommand("copy");
-				document.body.removeChild(tempElem);
-			});
-
+		
 		// Scrolly.
 			$('.scrolly').scrolly();
 

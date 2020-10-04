@@ -26,8 +26,7 @@
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 		<meta name="naver-site-verification" content="4737f2cdcbff74c456729bc1de5384d0c0544db8" />
-		<script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
-		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f3d4265ebbf72af"></script>
+		
 	</head>
 
 	<body id="top">
@@ -73,12 +72,12 @@
 							</div>
 
 							<div class="box">
-								<a class="image copy fit"><img src="images/pic03.png" onclick="alert('클립보드에 복사됨!')" alt="" /></a>
+								<a class="image copy fit"><img src="images/pic03.png" alt="" /></a>
 								<div class="inner">
 									<h3>서버 주소</h3>
 									<p>저희 서버의 주소는 ANNT.ml 입니다! 저희 서버 많이 플레이 해주세요! 아래의 버튼이나 이미지를 클릭하시면 복사됩니다!</p>
-									<input type="button" class="copy button style3 fit" value="서버 주소 복사" onclick="alert('클립보드에 ANNT.ml이 복사됨!')">
-								</div>
+									<input type="button" class="button style3 fit" id="btn1" value="서버 주소 복사" onclick="copy2clipboard('ANNT.ml')">
+									
 							</div>
 
 						</div>
@@ -96,25 +95,6 @@
 					data-ad-width   = "320" 
 					data-ad-height  = "50"></ins>
 				</div> 
-		<script>
-
-		/**
-		*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-		*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-		/*
-		var disqus_config = function () {
-		this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-		this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-		};
-		*/
-		(function() { // DON'T EDIT BELOW THIS LINE
-		var d = document, s = d.createElement('script');
-		s.src = 'https://aendeuryu-neteuweokeu.disqus.com/embed.js';
-		s.setAttribute('data-timestamp', +new Date());
-		(d.head || d.body).appendChild(s);
-		})();
-		</script>
-		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 	<!-- Footer -->
 		<footer id="footer">
 			<div class="inner">
@@ -131,6 +111,62 @@
 		<script src="assets/js/jquery.poptrox.min.js"></script>
 		<script src="assets/js/skel.min.js"></script>
 		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>					
+		<script src="assets/js/main.js"></script>
+		<!-- 클립보드 복사 -->
+		<script>
+			function copy2clipboard(text) {
+				// 최신 브라우저에서도 복사되도록 함
+				var textArea = document.createElement("textarea");
+			
+				// 임시로 textarea 생성
+				textArea.style.position = 'fixed';
+				textArea.style.top = 0;
+				textArea.style.left = 0;
+				textArea.style.width = '2em';
+				textArea.style.height = '2em';
+				textArea.style.padding = 0;
+				textArea.style.border = 'none';
+				textArea.style.outline = 'none';
+				textArea.style.boxShadow = 'none';
+				textArea.style.background = 'transparent';
+				textArea.value = text;
+				document.body.appendChild(textArea);
+			
+				// text를 넣은 후 선택
+				textArea.select();
+			
+				// 복사 시도
+				try {
+					var successful = document.execCommand('copy');
+					if(successful) alert("주소가 복사되었습니다.");
+				} catch (err) {
+					console.log('Unable to copy');
+				}
+			
+				// textarea 삭제
+				document.body.removeChild(textArea);
+			}
+		</script>
+		<!-- disqus 채팅 스크립트 -->
+		<script>
+
+			/**
+			*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+			*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+			/*
+			var disqus_config = function () {
+			this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+			this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+			};
+			*/
+			(function() { // DON'T EDIT BELOW THIS LINE
+			var d = document, s = d.createElement('script');
+			s.src = 'https://aendeuryu-neteuweokeu.disqus.com/embed.js';
+			s.setAttribute('data-timestamp', +new Date());
+			(d.head || d.body).appendChild(s);
+			})();
+		</script>
+		<script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f3d4265ebbf72af"></script>						
 	</body>
 </html>
